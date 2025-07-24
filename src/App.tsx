@@ -35,21 +35,37 @@ function App() {
   const nextSlide = useCallback(() => {
     setSlideDirection('next');
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    // Scroll to top on mobile after slide change
+    if (window.innerWidth < 768) {
+      setTimeout(() => window.scrollTo(0, 0), 100);
+    }
   }, []);
 
   const prevSlide = useCallback(() => {
     setSlideDirection('prev');
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    // Scroll to top on mobile after slide change
+    if (window.innerWidth < 768) {
+      setTimeout(() => window.scrollTo(0, 0), 100);
+    }
   }, []);
 
   const goToSlide = useCallback((index: number) => {
     setSlideDirection(index > currentSlide ? 'next' : 'prev');
     setCurrentSlide(index);
+    // Scroll to top on mobile after slide change
+    if (window.innerWidth < 768) {
+      setTimeout(() => window.scrollTo(0, 0), 100);
+    }
   }, [currentSlide]);
 
   const goToHome = () => {
     setSlideDirection('prev');
     setCurrentSlide(0);
+    // Scroll to top on mobile after slide change
+    if (window.innerWidth < 768) {
+      setTimeout(() => window.scrollTo(0, 0), 100);
+    }
   };
 
   const minSwipeDistance = 50;
