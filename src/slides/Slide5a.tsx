@@ -212,7 +212,7 @@ const Slide5a: React.FC<SlideProps> = ({ direction = 'next' }) => {
               <div className="flex items-center gap-2 sm:gap-3">
                 <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
                 <div>
-                  <p className="text-white font-semibold text-xs sm:text-sm">500+ Günlük Hatırlatma</p>
+                  <p className="text-white font-semibold text-xs sm:text-sm">50+ Günlük Hatırlatma</p>
                   <p className="text-emerald-300 text-xs">Otomatik yapılıyor</p>
                 </div>
               </div>
