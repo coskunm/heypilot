@@ -94,7 +94,7 @@ const Slide4: React.FC<SlideProps> = ({ direction = 'next' }) => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="flex justify-center items-center space-x-6 sm:space-x-8 md:space-x-12 animate-fade-in-delay-3 px-4">
+        <div className="flex justify-center items-center space-x-6 sm:space-x-8 md:space-x-12 animate-fade-in-delay-3 px-4 mb-4 md:mb-8">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold text-transparent bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text">∞</div>
             <div className="text-xs sm:text-sm text-white/60">Eş Zamanlı Çağrı</div>

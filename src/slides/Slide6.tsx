@@ -117,15 +117,6 @@ const Slide6: React.FC<SlideProps> = ({ direction = 'next' }) => {
           })}
         </div>
 
-        {/* Bottom Insight */}
-        <div className="text-center animate-fade-in-delay-3">
-          <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/10 backdrop-blur-xl rounded-full px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 lg:px-8 lg:py-4 border border-white/20">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse flex-shrink-0" />
-            <span className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg text-center">
-              Bu sonuçlar HeyPilot AI'nin neden kritik önemde olduğunu gösteriyor
-            </span>
-          </div>
-        </div>
       </div>
 
       <style jsx>{`

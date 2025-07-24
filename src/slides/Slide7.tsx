@@ -51,7 +51,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
         <div className="text-center space-y-1">
           <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white animate-fade-in">
             <span className="text-transparent bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text">
-              Neden Geleneksel Çağrı Yerine AI Call Center
+              Neden Geleneksel Çağrı Yerine<br />AI Call Center
             </span>
           </h1>
         </div>
@@ -66,8 +66,8 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
               {/* Header with animated gradient */}
               <div className="flex items-center gap-2 mb-2 sm:mb-3 relative">
                 <div className="relative">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-rose-500 to-red-600 rounded-lg flex items-center justify-center shadow-xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300">
-                    <div className="text-sm sm:text-lg md:text-xl filter drop-shadow-lg">❌</div>
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center shadow-xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 border border-white/20">
+                    <div className="text-sm sm:text-lg md:text-xl text-white font-bold">✖</div>
                   </div>
                   <div className="absolute -inset-1 bg-gradient-to-br from-rose-500/20 to-red-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>

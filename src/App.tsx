@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Play, Pause, RotateCcw } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
 import Slide1 from './slides/Slide1';
 import Slide2 from './slides/Slide2';
 import Slide3 from './slides/Slide3';
@@ -28,8 +28,9 @@ const slides = [
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(false);
   const [slideDirection, setSlideDirection] = useState<'next' | 'prev'>('next');
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const nextSlide = useCallback(() => {
     setSlideDirection('next');
@@ -46,9 +47,33 @@ function App() {
     setCurrentSlide(index);
   }, [currentSlide]);
 
-  const resetPresentation = () => {
+  const goToHome = () => {
+    setSlideDirection('prev');
     setCurrentSlide(0);
-    setIsAutoPlay(false);
+  };
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe && currentSlide < slides.length - 1) {
+      nextSlide();
+    } else if (isRightSwipe && currentSlide > 0) {
+      prevSlide();
+    }
   };
 
   useEffect(() => {
@@ -59,8 +84,6 @@ function App() {
       } else if (event.key === 'ArrowLeft') {
         event.preventDefault();
         prevSlide();
-      } else if (event.key === 'Escape') {
-        setIsAutoPlay(false);
       } else if (event.key === 'Home') {
         event.preventDefault();
         goToSlide(0);
@@ -74,22 +97,11 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [nextSlide, prevSlide, goToSlide]);
 
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    if (isAutoPlay) {
-      interval = setInterval(() => {
-        nextSlide();
-      }, 8000);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isAutoPlay, nextSlide]);
 
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-x-hidden overflow-y-auto">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-x-hidden overflow-y-auto md:overflow-hidden md:h-screen">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
@@ -98,15 +110,20 @@ function App() {
       </div>
 
       {/* Slide Container */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center p-4 pt-16 pb-24 sm:p-8 sm:pt-20 sm:pb-28 md:p-12 md:pt-24 md:pb-32">
+      <div 
+        className="relative z-10 min-h-screen flex items-center justify-center p-4 pt-16 pb-24 sm:p-8 sm:pt-20 sm:pb-28 md:h-screen md:p-6 md:pt-16 md:pb-20"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <div className="w-full max-w-7xl mx-auto">
           <CurrentSlideComponent direction={slideDirection} />
         </div>
       </div>
 
       {/* Navigation Controls */}
-      <div className="fixed bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="flex items-center gap-2 sm:gap-4 bg-white/10 backdrop-blur-md rounded-full px-3 py-2 sm:px-6 sm:py-3 border border-white/20 shadow-2xl">
+      <div className="fixed bottom-4 sm:bottom-8 md:bottom-4 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="flex items-center gap-1.5 sm:gap-3 bg-white/10 backdrop-blur-md rounded-full px-2.5 py-1.5 sm:px-4 sm:py-2 border border-white/20 shadow-2xl">
           {/* Previous Button */}
           <button
             onClick={prevSlide}
@@ -117,12 +134,12 @@ function App() {
           </button>
 
           {/* Slide Indicators */}
-          <div className="flex gap-1 sm:gap-2">
+          <div className="flex gap-0.5 sm:gap-1">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 hover:scale-125 touch-manipulation ${
+                className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full transition-all duration-300 hover:scale-125 touch-manipulation ${
                   index === currentSlide 
                     ? 'bg-white scale-110' 
                     : 'bg-white/40 hover:bg-white/60'
@@ -131,22 +148,13 @@ function App() {
             ))}
           </div>
 
-          {/* Auto Play Button */}
+          {/* Home Button */}
           <button
-            onClick={() => setIsAutoPlay(!isAutoPlay)}
-            className={`p-1.5 sm:p-2 rounded-full transition-all duration-200 hover:scale-105 touch-manipulation ${
-              isAutoPlay ? 'bg-emerald-500/80 hover:bg-emerald-500' : 'bg-white/20 hover:bg-white/30'
-            }`}
+            onClick={goToHome}
+            disabled={currentSlide === 0}
+            className="p-1.5 sm:p-2 rounded-full bg-white/20 hover:bg-white/30 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105 touch-manipulation"
           >
-            {isAutoPlay ? <Pause className="w-4 h-4 sm:w-5 sm:h-5 text-white" /> : <Play className="w-4 h-4 sm:w-5 sm:h-5 text-white" />}
-          </button>
-
-          {/* Reset Button */}
-          <button
-            onClick={resetPresentation}
-            className="p-1.5 sm:p-2 rounded-full bg-white/20 hover:bg-white/30 transition-all duration-200 hover:scale-105 touch-manipulation"
-          >
-            <RotateCcw className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            <Home className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </button>
 
           {/* Next Button */}
