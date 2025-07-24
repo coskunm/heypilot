@@ -44,11 +44,11 @@ const Slide1: React.FC<SlideProps> = ({ direction = 'next' }) => {
 
       {/* Core Qualities */}
       <div className="flex items-center gap-4 sm:gap-6 md:gap-8 text-lg sm:text-2xl md:text-3xl font-semibold text-white/80 animate-fade-in-delay-3 px-4">
-        <span className="animate-fade-in-stagger">Anında.</span>
+        <span className="animate-fade-in-stagger">Anında</span>
         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full animate-pulse" />
-        <span className="animate-fade-in-stagger" style={{ animationDelay: '0.3s' }}>Zeki.</span>
+        <span className="animate-fade-in-stagger" style={{ animationDelay: '0.3s' }}>Zeki</span>
         <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-indigo-400 rounded-full animate-pulse" />
-        <span className="animate-fade-in-stagger" style={{ animationDelay: '0.6s' }}>Kesintisiz.</span>
+        <span className="animate-fade-in-stagger" style={{ animationDelay: '0.6s' }}>Kesintisiz</span>
       </div>
 
       {/* Glassmorphism Description Panel */}
@@ -57,7 +57,7 @@ const Slide1: React.FC<SlideProps> = ({ direction = 'next' }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 via-transparent to-cyan-500/10 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         <div className="relative p-4 sm:p-6 md:p-8">
           <p className="text-base sm:text-xl md:text-2xl text-white/90 leading-relaxed">
-            HeyPilot AI, işinizin{' '}
+            HeyPilot AI, müşteri ilişkilerinizin{' '}
             <span className="text-transparent bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text font-semibold">
               co-pilotudur
             </span>
