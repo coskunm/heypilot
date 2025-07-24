@@ -22,7 +22,7 @@ const slides = [
   { id: "5b", component: Slide5b, title: "E-ticaret Sektörü Başarısı" },
   { id: "5c", component: Slide5c, title: "Finans Sektörü Başarısı" },
   { id: 6, component: Slide6, title: "İstatistikler" },
-  { id: 7, component: Slide7, title: "Maliyet Karşılaştırması" },
+  { id: 7, component: Slide7, title: "Karşılaştırma" },
   { id: 8, component: Slide8, title: "Kapanış" }
 ];
 
@@ -68,7 +68,7 @@ function App() {
     }
   };
 
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 100;
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);

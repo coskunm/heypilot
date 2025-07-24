@@ -49,9 +49,12 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
       <div className="max-w-6xl mx-auto space-y-1 sm:space-y-2">
         {/* Title */}
         <div className="text-center space-y-1">
-          <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black text-white animate-fade-in">
+          <h1 className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-black animate-fade-in">
+            <span className="text-white">
+              Neden Geleneksel Çağrı Yerine<br />
+            </span>
             <span className="text-transparent bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text">
-              Neden Geleneksel Çağrı Yerine<br />AI Call Center
+              AI Call Center
             </span>
           </h1>
         </div>
@@ -61,7 +64,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
           {/* Traditional Method */}
           <div className="group relative overflow-hidden animate-fade-in-stagger" style={{ animationDelay: '0.2s' }}>
             {/* Card Background */}
-<div className="relative bg-gradient-to-br from-slate-900/80 to-red-900/20 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 border border-rose-500/20 hover:border-rose-400/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-xl hover:shadow-rose-500/5">
+<div className="relative bg-gradient-to-br from-slate-900/60 to-red-900/10 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 border border-rose-500/15 hover:border-rose-400/25 transition-all duration-700 hover:scale-[1.01] hover:shadow-xl hover:shadow-rose-500/3">
               
               {/* Header with animated gradient */}
               <div className="flex items-center gap-2 mb-2 sm:mb-3 relative">
@@ -85,8 +88,8 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                   const IconComponent = item.icon;
                   return (
                     <div key={index} className="group/item relative">
-                      <div className="flex items-start gap-2 p-2 bg-gradient-to-r from-rose-500/5 to-red-500/3 backdrop-blur-sm rounded-lg border border-rose-500/15 hover:border-rose-400/20 transition-all duration-300 hover:bg-rose-500/8">
-                        <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-rose-500/15 to-red-500/15 rounded-md flex items-center justify-center border border-rose-500/20">
+                      <div className="flex items-start gap-2 p-2 bg-gradient-to-r from-rose-500/3 to-red-500/2 backdrop-blur-sm rounded-lg border border-rose-500/10 hover:border-rose-400/15 transition-all duration-300 hover:bg-rose-500/5">
+                        <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-rose-500/10 to-red-500/10 rounded-md flex items-center justify-center border border-rose-500/15">
                           <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-rose-400" />
                         </div>
                         <p className="text-xs sm:text-sm text-white/90 leading-tight font-medium">
@@ -94,7 +97,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                         </p>
                       </div>
                       {/* Subtle glow effect */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-rose-500/5 to-red-500/5 rounded-xl blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-rose-500/3 to-red-500/3 rounded-xl blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -z-10"></div>
                     </div>
                   );
                 })}
@@ -105,14 +108,14 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
               <div className="absolute top-12 right-8 w-1 h-1 bg-red-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{ animationDelay: '1s' }}></div>
               
               {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-red-600/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/3 to-red-600/3 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
             </div>
           </div>
 
           {/* AI Call Center */}
           <div className="group relative overflow-hidden animate-fade-in-stagger" style={{ animationDelay: '0.4s' }}>
             {/* Card Background */}
-            <div className="relative bg-gradient-to-br from-slate-900/80 to-emerald-900/20 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 border border-emerald-500/20 hover:border-emerald-400/30 transition-all duration-700 hover:scale-[1.01] hover:shadow-xl hover:shadow-emerald-500/5">
+            <div className="relative bg-gradient-to-br from-slate-900/60 to-emerald-900/10 backdrop-blur-xl rounded-xl sm:rounded-2xl p-2 sm:p-3 md:p-4 border border-emerald-500/15 hover:border-emerald-400/25 transition-all duration-700 hover:scale-[1.01] hover:shadow-xl hover:shadow-emerald-500/3">
               
               {/* Header with animated gradient */}
               <div className="flex items-center gap-2 mb-2 sm:mb-3 relative">
@@ -136,8 +139,8 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                   const IconComponent = item.icon;
                   return (
                     <div key={index} className="group/item relative">
-                      <div className="flex items-start gap-2 p-2 bg-gradient-to-r from-emerald-500/5 to-green-500/3 backdrop-blur-sm rounded-lg border border-emerald-500/15 hover:border-emerald-400/20 transition-all duration-300 hover:bg-emerald-500/8">
-                        <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-emerald-500/15 to-green-500/15 rounded-md flex items-center justify-center border border-emerald-500/20">
+                      <div className="flex items-start gap-2 p-2 bg-gradient-to-r from-emerald-500/3 to-green-500/2 backdrop-blur-sm rounded-lg border border-emerald-500/10 hover:border-emerald-400/15 transition-all duration-300 hover:bg-emerald-500/5">
+                        <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-br from-emerald-500/10 to-green-500/10 rounded-md flex items-center justify-center border border-emerald-500/15">
                           <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
                         </div>
                         <p className="text-xs sm:text-sm text-white/90 leading-tight font-medium">
@@ -145,7 +148,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                         </p>
                       </div>
                       {/* Subtle glow effect */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/5 to-green-500/5 rounded-xl blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -z-10"></div>
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-emerald-500/3 to-green-500/3 rounded-xl blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 -z-10"></div>
                     </div>
                   );
                 })}
@@ -162,7 +165,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
               <div className="absolute bottom-8 right-12 w-1.5 h-1.5 bg-emerald-300 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{ animationDelay: '1.5s' }}></div>
               
               {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-600/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/3 to-green-600/3 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
             </div>
           </div>
         </div>

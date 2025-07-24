@@ -31,7 +31,8 @@ const Slide1: React.FC<SlideProps> = ({ direction = 'next' }) => {
       <div className="space-y-4 sm:space-y-6 z-10 px-4">
         <h1 className="text-2xl sm:text-4xl md:text-6xl font-light text-white/90 animate-fade-in-words">
           Müşteri İletişiminde{' '}
-          <span className="font-bold text-transparent bg-gradient-to-r from-sky-400 via-indigo-400 to-cyan-400 bg-clip-text animate-fade-in-words-delay-1">
+          <span className="sm:hidden"><br /></span>
+          <span className="font-bold text-transparent bg-gradient-to-r from-sky-400 via-indigo-400 to-cyan-400 bg-clip-text animate-fade-in-words-delay-1 text-3xl sm:text-4xl md:text-6xl">
             Yeni Bir Ufuk
           </span>
         </h1>
