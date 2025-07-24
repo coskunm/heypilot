@@ -89,7 +89,7 @@ function App() {
   const CurrentSlideComponent = slides[currentSlide].component;
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-hidden">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 overflow-x-hidden overflow-y-auto">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
@@ -98,7 +98,7 @@ function App() {
       </div>
 
       {/* Slide Container */}
-      <div className="relative z-10 h-screen flex items-center justify-center p-2 sm:p-4 md:p-8">
+      <div className="relative z-10 min-h-screen flex items-center justify-center p-4 pt-16 pb-24 sm:p-8 sm:pt-20 sm:pb-28 md:p-12 md:pt-24 md:pb-32">
         <div className="w-full max-w-7xl mx-auto">
           <CurrentSlideComponent direction={slideDirection} />
         </div>
