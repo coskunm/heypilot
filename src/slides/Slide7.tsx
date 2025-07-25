@@ -23,11 +23,6 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
       ai: "\"Size nasıl yardımcı olabilirim?\" ile doğal ve hızlı çözüm"
     },
     {
-      icon: Settings,
-      traditional: "Sadece basit işlemleri yapabilir, karmaşık konularda yetersiz kalır",
-      ai: "Karmaşık konuları anlayarak anında çözüm sunar"
-    },
-    {
       icon: Star,
       traditional: "Yorgunluk, stres, tükenmişlik kaynaklı standart olmayan görüşmeler",
       ai: "Her konuşmada aynı standart ve kalite"
@@ -72,7 +67,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                   <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-slate-700 to-slate-800 rounded-lg flex items-center justify-center shadow-xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 border border-white/20">
                     <div className="text-sm sm:text-lg md:text-xl text-white font-bold">✖</div>
                   </div>
-                  <div className="absolute -inset-1 bg-gradient-to-br from-rose-500/20 to-red-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-rose-500/20 to-red-600/20 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                 </div>
                 <div>
                   <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-black text-transparent bg-gradient-to-r from-rose-400 to-red-400 bg-clip-text">
@@ -108,7 +103,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
               <div className="absolute top-12 right-8 w-1 h-1 bg-red-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{ animationDelay: '1s' }}></div>
               
               {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/3 to-red-600/3 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/3 to-red-600/3 opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-700"></div>
             </div>
           </div>
 
@@ -123,7 +118,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
                   <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center shadow-xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-300">
                     <div className="text-sm sm:text-lg md:text-xl filter drop-shadow-lg">✅</div>
                   </div>
-                  <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500/20 to-green-600/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-emerald-500/20 to-green-600/20 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
                 </div>
                 <div>
                   <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-black text-transparent bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text">
@@ -165,7 +160,7 @@ const Slide7: React.FC<SlideProps> = ({ direction = 'next' }) => {
               <div className="absolute bottom-8 right-12 w-1.5 h-1.5 bg-emerald-300 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity duration-300" style={{ animationDelay: '1.5s' }}></div>
               
               {/* Animated background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/3 to-green-600/3 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/3 to-green-600/3 opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-700"></div>
             </div>
           </div>
         </div>
